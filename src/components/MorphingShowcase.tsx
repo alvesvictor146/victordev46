@@ -121,10 +121,10 @@ const MorphingShowcase: React.FC = () => {
         <div className="morphing-visual-col" ref={visualRef}>
           {/* We use basic CSS shapes and glassmorphism to represent the stages */}
           <div className="stage-visual wireframe">
-            <video src="/showcase_video.mp4" autoPlay loop muted playsInline className="showcase-video"></video>
+            <video src={`${import.meta.env.BASE_URL}showcase_video.mp4`} autoPlay loop muted playsInline className="showcase-video"></video>
           </div>
           <div className="stage-visual layout">
-            <video src="/showcase_layout_video.mp4" autoPlay loop muted playsInline className="showcase-video"></video>
+            <video src={`${import.meta.env.BASE_URL}showcase_layout_video.mp4`} autoPlay loop muted playsInline className="showcase-video"></video>
           </div>
           <div className="stage-visual prototype">
             <video src={prototypeVideo} autoPlay loop muted playsInline className="showcase-video"></video>

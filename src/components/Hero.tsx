@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
     <section className="hero-section" ref={containerRef}>
       <motion.div className="hero-background" style={{ y, opacity }}>
         <img 
-          src="/hero_background_1784733912902.png" 
+          src={`${import.meta.env.BASE_URL}hero_background_1784733912902.png`} 
           alt="Futuristic City" 
           className="hero-bg-img"
         />
@@ -117,7 +117,7 @@ const Hero: React.FC = () => {
         animate={{ opacity: 1, scale: 1, y: 0 }}
         transition={{ delay: 0.8, duration: 1.5, ease: "easeOut" }}
       >
-        <img src="/new_actor.jpeg" alt="Tech Specialist" />
+        <img src={`${import.meta.env.BASE_URL}new_actor.jpeg`} alt="Tech Specialist" />
       </motion.div>
     </section>
   );

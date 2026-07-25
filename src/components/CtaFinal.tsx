@@ -29,7 +29,7 @@ const CtaFinal: React.FC = () => {
           className="cta-actor"
           style={{ y, opacity }}
         >
-          <img src="/new_actor.jpeg" alt="Tech Specialist" />
+          <img src={`${import.meta.env.BASE_URL}new_actor.jpeg`} alt="Tech Specialist" />
         </motion.div>
 
         <motion.h2 
