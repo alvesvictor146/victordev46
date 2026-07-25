@@ -1,5 +1,5 @@
 .marquee-container {
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   background-color: var(--bg-deep-black); /* Or match the section below/above */
   border-top: 1px solid var(--glass-border);

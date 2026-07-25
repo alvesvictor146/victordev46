@@ -64,4 +64,9 @@
   .header-actions .btn-secondary {
     display: none;
   }
+  .header-actions .btn-gradient {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
 }

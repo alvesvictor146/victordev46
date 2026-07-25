@@ -1,7 +1,7 @@
 .hero-section {
   position: relative;
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -49,11 +49,12 @@
 }
 
 .hero-title {
-  font-size: clamp(3rem, 7vw, 7rem);
+  font-size: clamp(2rem, 7vw, 7rem);
   line-height: 1.05;
   margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
+  word-break: break-word;
 }
 
 .hero-title .line {
@@ -97,9 +98,10 @@
 
 @media (max-width: 1024px) {
   .hero-actor {
-    opacity: 0.3 !important;
-    right: 50%;
-    transform: translateX(50%);
+    opacity: 0.8 !important;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
     width: 80vw;
   }
 }

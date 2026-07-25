@@ -1,6 +1,6 @@
 .morphing-section {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  width: 100%;
   background-color: var(--bg-graphite);
   display: flex;
   flex-direction: column;
@@ -183,12 +183,21 @@
   .morphing-container {
     grid-template-columns: 1fr;
     gap: 2rem;
+    align-items: start;
   }
   .stage-text {
     font-size: 2rem;
   }
   .morphing-visual-col {
+    position: sticky;
+    top: 100px;
     height: 40vh;
+    z-index: 10;
+    order: -1;
+  }
+  .morphing-text-col {
+    height: auto;
+    padding-bottom: 20vh;
   }
 }
 
