@@ -1,0 +1,45 @@
+.marquee-container {
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--bg-deep-black); /* Or match the section below/above */
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+}
+
+.marquee-content {
+  display: flex;
+  width: max-content;
+  animation: scrollMarquee 40s linear infinite;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding-right: 3rem;
+}
+
+.marquee-word {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #9333ea; /* Deeper purple */
+  text-shadow: 
+    0 0 5px rgba(147, 51, 234, 0.5),
+    0 0 15px rgba(147, 51, 234, 0.8),
+    0 0 30px #9333ea;
+  white-space: nowrap;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
