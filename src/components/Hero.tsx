@@ -62,11 +62,15 @@ const Hero: React.FC = () => {
   return (
     <section className="hero-section" ref={containerRef}>
       <motion.div className="hero-background" style={{ y, opacity }}>
-        <img 
-          src={`${import.meta.env.BASE_URL}hero_background_1784733912902.png`} 
-          alt="Futuristic City" 
-          className="hero-bg-img"
-        />
+        <video 
+          className="hero-bg-video"
+          autoPlay 
+          loop 
+          muted 
+          playsInline
+        >
+          <source src={`${import.meta.env.BASE_URL}hero_video.mp4`} type="video/mp4" />
+        </video>
         <div className="hero-overlay"></div>
       </motion.div>
 
@@ -111,14 +115,6 @@ const Hero: React.FC = () => {
         </motion.div>
       </div>
 
-      <motion.div 
-        className="hero-actor"
-        initial={{ opacity: 0, scale: 0.9, y: 50 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        transition={{ delay: 0.8, duration: 1.5, ease: "easeOut" }}
-      >
-        <img src={`${import.meta.env.BASE_URL}new_actor.jpeg`} alt="Tech Specialist" />
-      </motion.div>
     </section>
   );
 };
