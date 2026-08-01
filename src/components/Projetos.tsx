@@ -46,7 +46,6 @@ const Projetos: React.FC = () => {
             >
               <video 
                 src={`${import.meta.env.BASE_URL}${video}`}
-                type="video/mp4"
                 autoPlay 
                 loop 
                 muted 
