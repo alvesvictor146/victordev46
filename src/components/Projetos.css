@@ -1,0 +1,114 @@
+.projetos-section {
+  padding: 0 2rem 8rem;
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+}
+
+.projetos-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.projetos-header .section-subtitle {
+  color: var(--text-gray);
+  font-size: 1.2rem;
+  margin-top: 1rem;
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 2rem 1rem;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  flex: 0 0 320px;
+  height: 570px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  scroll-snap-align: center;
+}
+
+.carousel-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: auto;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.carousel-btn:hover {
+  background: var(--neon-purple);
+  border-color: var(--neon-purple);
+  box-shadow: 0 0 20px var(--neon-purple);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+  left: -10px;
+}
+
+.next-btn {
+  right: -10px;
+}
+
+@media (max-width: 1024px) {
+  .carousel-item {
+    flex: 0 0 280px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    flex: 0 0 240px;
+    height: 420px;
+  }
+  .prev-btn { left: 0px; width: 45px; height: 45px; font-size: 1.8rem; }
+  .next-btn { right: 0px; width: 45px; height: 45px; font-size: 1.8rem; }
+  .projetos-section {
+    padding: 4rem 1rem;
+  }
+}

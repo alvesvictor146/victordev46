@@ -111,7 +111,7 @@ const Hero: React.FC = () => {
           transition={{ delay: 1.2, duration: 1 }}
         >
           <a href="https://wa.me/5511945865631?text=OLA%0AQUERO%20UM%20SITE%20PARA%20MINHA%20EMPRESA%20." target="_blank" rel="noopener noreferrer" className="btn-gradient hover-target" style={{ textDecoration: 'none' }}>Solicitar Projeto</a>
-          <button className="btn-gradient hover-target" style={{ marginLeft: '1rem' }}>Ver Demonstração</button>
+          <button className="btn-gradient hover-target" style={{ marginLeft: '1rem' }}>Ver Projetos</button>
         </motion.div>
       </div>
 

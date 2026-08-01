@@ -14,7 +14,7 @@ const Header: React.FC = () => {
       <div className="header-container">
         <div className="logo hover-target">
           <span className="text-gradient">ZION </span>
-          <span className="text-gradient-neon" style={{ fontSize: '0.8em', fontWeight: 500 }}>Desenvolvimento</span>
+          <span className="text-glow-white" style={{ fontSize: '0.8em', fontWeight: 500 }}>Desenvolvimento</span>
         </div>
         
         <nav className="desktop-nav">

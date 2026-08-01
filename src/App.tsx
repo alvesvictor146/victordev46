@@ -12,6 +12,7 @@ import Marquee from './components/Marquee';
 // Add the other sections below as we build them.
 import MorphingShowcase from './components/MorphingShowcase';
 import InteractivePlayground from './components/InteractivePlayground';
+import Projetos from './components/Projetos';
 import CtaFinal from './components/CtaFinal';
 
 function App() {
@@ -51,6 +52,7 @@ function App() {
         <MorphingShowcase />
         <Marquee text="VAMOS CRIAR JUNTOS EFEITOS PARA CHAMAR ATENÇÃO NA SUA PAGINA !" />
         <InteractivePlayground />
+        <Projetos />
         <CtaFinal />
       </main>
     </>

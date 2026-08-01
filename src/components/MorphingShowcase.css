@@ -184,20 +184,28 @@
     grid-template-columns: 1fr;
     gap: 2rem;
     align-items: start;
+    padding: 2rem 1rem;
   }
   .stage-text {
     font-size: 2rem;
   }
   .morphing-visual-col {
     position: sticky;
-    top: 100px;
-    height: 40vh;
+    top: 80px;
+    height: 35vh;
     z-index: 10;
     order: -1;
   }
   .morphing-text-col {
     height: auto;
-    padding-bottom: 20vh;
+    display: flex;
+    flex-direction: column;
+    gap: 25vh; /* Space out the text so it scrolls smoothly under the video */
+    padding-top: 5vh;
+    padding-bottom: 30vh;
+  }
+  .stages-list {
+    gap: 25vh; /* Ensure the list itself spreads out */
   }
 }
 

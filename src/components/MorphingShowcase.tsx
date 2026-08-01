@@ -101,7 +101,7 @@ const MorphingShowcase: React.FC = () => {
       <div className="morphing-container">
         
         <div className="morphing-text-col" ref={textRef}>
-          <h2 className="section-title">O Efeito <span className="text-gradient-neon">WOW</span></h2>
+          <h2 className="section-title">Processo de <span className="text-gradient-neon">Criação</span></h2>
           <div className="stages-list">
             {stages.map((stage, idx) => (
               <div key={idx} className="stage-text">
