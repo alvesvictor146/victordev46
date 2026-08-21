@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 import './Projetos.css';
 
 const videos = [
-  "WhatsApp Video 2026-08-01 at 09.24.55.mp4",
-  "WhatsApp Video 2026-08-01 at 09.25.04.mp4",
-  "WhatsApp Video 2026-08-01 at 09.25.07.mp4",
-  "WhatsApp Video 2026-08-01 at 09.25.11.mp4",
-  "WhatsApp Video 2026-08-01 at 09.25.16.mp4"
+  { src: "WhatsApp Video 2026-08-01 at 09.24.55.mp4", title: "Projeto de site profissional - Exemplo 1" },
+  { src: "WhatsApp Video 2026-08-01 at 09.25.04.mp4", title: "Projeto de landing page de alta conversão - Exemplo 2" },
+  { src: "WhatsApp Video 2026-08-01 at 09.25.07.mp4", title: "Projeto de site empresarial - Exemplo 3" },
+  { src: "WhatsApp Video 2026-08-01 at 09.25.11.mp4", title: "Projeto de site para pequena empresa - Exemplo 4" },
+  { src: "WhatsApp Video 2026-08-01 at 09.25.16.mp4", title: "Projeto de site personalizado - Exemplo 5" }
 ];
 
 const Projetos: React.FC = () => {
@@ -35,7 +35,7 @@ const Projetos: React.FC = () => {
       </div>
 
       <div className="carousel-container">
-        <button className="carousel-btn prev-btn hover-target" onClick={scrollLeft}>&#8249;</button>
+        <button className="carousel-btn prev-btn hover-target" onClick={scrollLeft} aria-label="Ver projeto anterior">&#8249;</button>
         <div className="carousel-track" ref={carouselRef}>
           {videos.map((video, index) => (
             <motion.div 
@@ -45,17 +45,18 @@ const Projetos: React.FC = () => {
               transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               <video 
-                src={`${import.meta.env.BASE_URL}${video}`}
+                src={`${import.meta.env.BASE_URL}${video.src}`}
                 autoPlay 
                 loop 
                 muted 
                 playsInline
                 className="carousel-video hover-target"
+                title={video.title}
               />
             </motion.div>
           ))}
         </div>
-        <button className="carousel-btn next-btn hover-target" onClick={scrollRight}>&#8250;</button>
+        <button className="carousel-btn next-btn hover-target" onClick={scrollRight} aria-label="Ver próximo projeto">&#8250;</button>
       </div>
     </section>
   );

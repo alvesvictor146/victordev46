@@ -1,33 +1,46 @@
+/* =============================================
+   MORPHING SHOWCASE — Estilos base (desktop first)
+   ============================================= */
+
 .morphing-section {
   min-height: 100vh;
   width: 100%;
   background-color: var(--bg-graphite);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
+  /* overflow-x: clip preserva sticky sem criar scroll container (ao contrário de overflow: hidden) */
+  overflow-x: clip;
 }
 
 .morphing-container {
   width: 100%;
   max-width: 1440px;
-  margin: auto; /* Safe centering */
+  margin: auto;
   display: grid;
+  /* Título na coluna da esquerda (linha 1), texto abaixo (linha 2), vídeo à direita cobrindo ambas */
+  grid-template-areas:
+    "title visual"
+    "text  visual";
   grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 4rem;
+  grid-template-rows: auto auto;
+  align-items: start;
+  gap: 0 4rem;
   padding: 4rem;
 }
 
 .morphing-text-col {
+  grid-area: text;
   height: 60vh; /* Matches visual column to prevent grid stretching */
   position: relative;
 }
 
 .section-title {
+  grid-area: title;
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   margin-bottom: 2rem;
   line-height: 1.2;
   padding-bottom: 0.1em;
+  align-self: end;
 }
 
 .stages-list {
@@ -86,8 +99,10 @@
 }
 
 .morphing-visual-col {
+  grid-area: visual;
   position: relative;
   height: 60vh;
+  align-self: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -179,41 +194,102 @@
   z-index: 1;
 }
 
+/* Ocultar vídeo mobile no desktop */
+.mobile-stage-video {
+  display: none;
+}
+
+/* =============================================
+   📱 MOBILE — Coluna única
+   Ordem no DOM (= ordem visual em mobile):
+   1. Título (topo)
+   2. Vídeo sticky (logo abaixo do header)
+   3. Textos (fluem abaixo, sobem atrás do vídeo)
+   ============================================= */
 @media (max-width: 900px) {
   .morphing-container {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-    align-items: start;
-    padding: 2rem 1rem;
-  }
-  .stage-text {
-    font-size: 2rem;
-  }
-  .morphing-visual-col {
-    position: sticky;
-    top: 80px;
-    height: 35vh;
-    z-index: 10;
-    order: -1;
-  }
-  .morphing-text-col {
-    height: auto;
     display: flex;
     flex-direction: column;
-    gap: 25vh; /* Space out the text so it scrolls smoothly under the video */
-    padding-top: 5vh;
-    padding-bottom: 30vh;
+    align-items: center;
+    gap: 0;
+    padding: 1.5rem 1rem 0;
   }
+
+  .section-title {
+    text-align: center;
+    font-size: 2rem;
+    line-height: 1.25;
+    margin-bottom: 1.2rem;
+    width: 100%;
+    align-self: auto; /* reset desktop align-self: end */
+  }
+
+  .morphing-visual-col {
+    /* Fica fixo no topo durante todo o scroll da seção */
+    position: sticky;
+    top: 70px; /* Logo abaixo do header fixo */
+    width: 100%;
+    height: min(45vw, 220px);
+    z-index: 10; /* Acima dos textos — os textos sobem por BAIXO dele */
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+    background: var(--bg-deep-black);
+    align-self: auto; /* reset desktop align-self: center */
+  }
+
+  .morphing-text-col {
+    width: 100%;
+    height: auto;
+    padding-top: 2.5rem;
+    padding-bottom: 35vh; /* Respiro ao final da seção */
+    /* z-index menor que o vídeo: textos desaparecem POR TRÁS do vídeo ao subir */
+    z-index: 5;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: auto;
+  }
+
   .stages-list {
-    gap: 25vh; /* Ensure the list itself spreads out */
+    /* Gap ajustado: transição suave sem vão visível entre etapas */
+    gap: 15vh;
+  }
+
+  .stage-text {
+    opacity: 0.2; /* Dimmed por padrão — GSAP gerencia opacity ativa/inativa */
+    transition: none;
+  }
+
+  /* Sobrescreve o :first-child global */
+  .stage-text:first-child {
+    opacity: 0.2;
+    transform: none;
+  }
+
+  .stage-header {
+    font-size: clamp(1.6rem, 5.5vw, 2.2rem);
+    gap: 1rem;
+  }
+
+  .stage-details {
+    padding-left: 2rem;
+  }
+
+  .stage-details p {
+    font-size: 0.95rem;
+    line-height: 1.55;
   }
 }
 
-/* Height-based adjustments to prevent vertical clipping on smaller screens */
-@media (max-height: 900px) {
+/* =============================================
+   Ajustes por altura — SOMENTE DESKTOP
+   (min-width: 901px garante que não conflitem com mobile)
+   ============================================= */
+@media (max-height: 900px) and (min-width: 901px) {
   .morphing-container {
     padding: 2rem;
-    gap: 2rem;
+    gap: 0 2rem;
   }
   .section-title {
     margin-bottom: 1rem;
@@ -241,10 +317,10 @@
   }
 }
 
-@media (max-height: 750px) {
+@media (max-height: 750px) and (min-width: 901px) {
   .morphing-container {
     padding: 1rem;
-    gap: 1.5rem;
+    gap: 0 1.5rem;
   }
   .section-title {
     font-size: clamp(1.8rem, 3vw, 2.5rem);
@@ -268,4 +344,3 @@
     height: 40vh;
   }
 }
-

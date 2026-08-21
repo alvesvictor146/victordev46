@@ -68,6 +68,8 @@ const Hero: React.FC = () => {
           loop 
           muted 
           playsInline
+          title="ZION Desenvolvimento - Criação de sites profissionais em São Paulo"
+          aria-label="Vídeo de apresentação da ZION Desenvolvimento, empresa de criação de sites profissionais"
         >
           <source src={`${import.meta.env.BASE_URL}hero_video.mp4`} type="video/mp4" />
         </video>

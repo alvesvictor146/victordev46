@@ -29,7 +29,7 @@ const CtaFinal: React.FC = () => {
           className="cta-actor"
           style={{ y, opacity }}
         >
-          <img src={`${import.meta.env.BASE_URL}new_actor.jpeg`} alt="Tech Specialist" />
+          <img src={`${import.meta.env.BASE_URL}new_actor.jpeg`} alt="Especialista em criação de sites profissionais da ZION Desenvolvimento em São Paulo" />
         </motion.div>
 
         <motion.h2 
